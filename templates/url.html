@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 URL Fraud Detection</h1>
+        <p class="subtitle">Paste a website link below to check if it is safe or fraudulent.</p>
+        <div class="form-section">
+            <label for="urlInput">Website URL</label>
+            <input type="text" id="urlInput">
+            <button onclick="checkURL()">Check URL</button>
+        </div>
+        <div class="info">
+            <h3>Tips for URL Safety</h3>
+            <ul>
+                <li>Check for misspellings or extra characters in URLs.</li>
+                <li>Be cautious of shortened or unfamiliar links.</li>
+                <li>Look for HTTPS and a valid certificate.</li>
+            </ul>
+        </div>
+        <a class="back-link" href="/">⬅ Back to Home</a>
+    </div>
+
+    {% include 'popup.html' %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

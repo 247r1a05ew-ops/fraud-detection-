@@ -1,0 +1,231 @@
+/* Form Section for SMS/URL Pages */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 28px;
+    background: rgba(0,255,255,0.03);
+    padding: 18px 14px 14px 14px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00f5ff22;
+}
+.form-section label {
+    color: #00f5ff;
+    font-size: 16px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+.form-section textarea,
+.form-section input[type="text"] {
+    border-radius: 8px;
+    border: 1px solid #00f5ff44;
+    padding: 10px;
+    font-size: 15px;
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    resize: vertical;
+    margin-bottom: 8px;
+    outline: none;
+    transition: border 0.2s;
+}
+.form-section textarea:focus,
+.form-section input[type="text"]:focus {
+    border: 1.5px solid #00f5ff;
+    background: rgba(0,255,255,0.07);
+}
+.analyze-btn {
+    margin-top: 8px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(45deg, #00f5ff, #0066ff);
+    box-shadow: 0 0 20px #00f5ff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.analyze-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00f5ff;
+}
+.back-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #00f5ff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    color: white;
+    background: black;
+    padding: 20px 0;
+}
+
+/* Custom Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00f5ff, #0066ff);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00f5ff, #0066ff);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+}
+
+/* MATRIX RAIN BACKGROUND */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* GLASS CONTAINER */
+.container {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px 30px 30px 30px;
+    width: 95%;
+    max-width: 700px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 40px rgba(0,255,255,0.2);
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #b2f7ff;
+    margin-bottom: 30px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.action-card {
+    background: rgba(0, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 28px 24px 22px 24px;
+    min-width: 220px;
+    max-width: 300px;
+    flex: 1 1 220px;
+    box-shadow: 0 0 18px rgba(0,255,255,0.08);
+    border: 1px solid rgba(0,255,255,0.13);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+.action-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 30px #00f5ff44;
+}
+.action-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #00f5ff;
+    text-shadow: 0 0 8px #00f5ff44;
+}
+.action-card p {
+    font-size: 15px;
+    color: #e0f7fa;
+    margin-bottom: 18px;
+}
+
+.info {
+    margin-top: 30px;
+    background: rgba(0, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 18px 16px 10px 16px;
+    color: #b2f7ff;
+    font-size: 15px;
+    box-shadow: 0 0 10px #00f5ff22;
+}
+.info h3 {
+    margin-top: 0;
+    color: #00f5ff;
+    font-size: 18px;
+}
+.info ul {
+    text-align: left;
+    margin: 0 auto 0 1.5em;
+    padding: 0;
+    color: #b2f7ff;
+}
+.info li {
+    margin-bottom: 7px;
+    line-height: 1.6;
+}
+
+/* Title Glow */
+h1 {
+    font-size: 32px;
+    text-shadow: 0 0 20px cyan;
+}
+
+/* Buttons */
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(45deg, #00f5ff, #0066ff);
+    box-shadow: 0 0 20px #00f5ff;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00f5ff;
+}
+.risk-container{
+    width:100%;
+    background:#222;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.risk-bar{
+    height:30px;
+    width:0%;
+    text-align:center;
+    line-height:30px;
+    color:white;
+    font-weight:bold;
+    transition: width 1s ease-in-out;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>📷 QR Code Fraud Detection</h1>
+    <p class="subtitle">
+        Upload a QR code image to check if it contains malicious links or scam messages.
+    </p>
+    <div class="form-section">
+        <label for="qrInput">Upload QR Code</label>
+        <input type="file" id="qrInput" accept="image/*">
+        <button onclick="checkQR()">Check QR</button>
+    </div>
+    <div class="info">
+        <h3>Tips for QR Code Safety</h3>
+        <ul>
+            <li>Avoid scanning unknown QR codes.</li>
+            <li>QR codes can redirect to phishing websites.</li>
+            <li>Verify before entering sensitive information.</li>
+        </ul>
+    </div>
+    <a class="back-link" href="/">⬅ Back to Home</a>
+</div>
+{% include 'popup.html' %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

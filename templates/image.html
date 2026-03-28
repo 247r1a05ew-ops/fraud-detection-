@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🖼 Image Fraud Detection</h1>
+    <p class="subtitle">
+        Upload an image to detect fraud messages, payment scams, or phishing content.
+    </p>
+    <div class="form-section">
+        <label for="imageInput">Upload Image</label>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="checkImage()">Check Image</button>
+    </div>
+    <div class="info">
+        <h3>Tips for Image Scam Detection</h3>
+        <ul>
+            <li>Fraudsters often send fake payment screenshots.</li>
+            <li>Lottery or prize images are common scams.</li>
+            <li>Always verify links inside images.</li>
+        </ul>
+    </div>
+    <a class="back-link" href="/">⬅ Back to Home</a>
+</div>
+{% include 'popup.html' %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

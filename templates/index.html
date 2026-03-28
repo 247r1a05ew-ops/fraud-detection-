@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyberShield Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <script>
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "01";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+
+    for (let x = 0; x < columns; x++) {
+        drops[x] = 1;
+    }
+
+    function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ff00";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+                drops[i] = 0;
+
+            drops[i]++;
+        }
+    }
+
+    setInterval(draw, 33);
+    </script>
+    <div class="container">
+        <h1>🛡 CyberShield Fraud Detection</h1>
+        <p class="subtitle">Advanced AI-Based SMS & URL Fraud Detection Engine</p>
+        <div class="actions">
+            <div class="action-card">
+                <h2>SMS Fraud Check</h2>
+                <p>Scan suspicious SMS messages for potential fraud or phishing attempts.</p>
+                <button onclick="location.href='/sms'">Check SMS</button>
+            </div>
+            <div class="action-card">
+                <h2>URL Fraud Check</h2>
+                <p>Analyze website links for malicious or fraudulent activity.</p>
+                <button onclick="location.href='/url'">Check URL</button>
+            </div>
+            <div class="action-card">
+                <h2>Image Fraud Check</h2>
+                <p>Upload suspicious images such as payment screenshots or scam messages.</p>
+                <button onclick="location.href='/image'">Check Image</button>
+            </div>
+
+            <div class="action-card">
+                <h2>QR Code Check</h2>
+                <p>Scan QR codes to detect malicious or phishing links.</p>
+                <button onclick="location.href='/qr'">Check QR</button>
+            </div>
+        </div>
+        <div class="info">
+            <h3>How it works?</h3>
+            <ul>
+                <li>Paste your SMS or URL to get instant fraud analysis.</li>
+                <li>Our AI engine checks for scams, phishing, and suspicious content.</li>
+                <li>Stay safe and secure online!</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

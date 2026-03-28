@@ -1,0 +1,9 @@
+flask
+requests
+scikit-learn
+pytesseract
+opencv-python
+Pillow
+pyzbar
+tldextract
+python-whois

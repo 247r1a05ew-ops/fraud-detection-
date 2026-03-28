@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SMS Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📩 SMS Fraud Detection</h1>
+        <p class="subtitle">Paste your SMS message below to check for fraud or phishing attempts.</p>
+
+        <div class="form-section">
+            <label for="smsText">SMS Message</label>
+            <textarea id="smsText" rows="6" placeholder="Paste suspicious SMS here..."></textarea>
+            <button onclick="checkSMS()">Check SMS</button>
+        </div>
+
+        <div class="info">
+            <h3>Tips for SMS Safety</h3>
+            <ul>
+                <li>Never click suspicious links in SMS messages.</li>
+                <li>Be wary of urgent requests for personal or financial info.</li>
+                <li>Verify sender details before responding.</li>
+            </ul>
+        </div>
+
+        <a class="back-link" href="/">⬅ Back to Home</a>
+    </div>
+
+    {% include 'popup.html' %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
